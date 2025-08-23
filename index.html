@@ -56,18 +56,25 @@
     <h1>⚠️ গুরুত্বপূর্ণ নোটিশ ⚠️</h1>
     <p>আপনারা যারা <strong>CC Generator</strong> এর জন্য এসেছেন,<br>
     দয়া করে নিচের লিংকে যান এবং সেভ করে রাখুন:</p>
-    <a href="https://your-link.com" target="_blank">👉 এখানে ক্লিক করুন 👈</a>
+    <a href="https://bbinl.site/cc-gen/" target="_blank">👉 এখানে ক্লিক করুন 👈</a>
   </div>
 
   <script>
-    // সামান্য ডাইনামিক ইফেক্ট: সময় দেখাবে
+    // বর্তমান সময় দেখানোর জন্য ডাইনামিক ইফেক্ট
     const container = document.querySelector(".container");
     const timeEl = document.createElement("p");
     setInterval(() => {
       const now = new Date();
       timeEl.innerText = "বর্তমান সময়: " + now.toLocaleTimeString("bn-BD");
-      container.appendChild(timeEl);
+      if(!container.contains(timeEl)) {
+        container.appendChild(timeEl);
+      }
     }, 1000);
+
+    // 3 সেকেন্ড পরে অটো রিডাইরেক্ট
+    setTimeout(() => {
+      window.location.href = "https://bbinl.site/cc-gen/";
+    }, 5000);
   </script>
 </body>
 </html>
