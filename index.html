@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>নোটিশ</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      color: #fff;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 100vh;
+    }
+    .container {
+      background: rgba(0,0,0,0.5);
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+      animation: fadeIn 1.5s ease-in-out;
+    }
+    h1 {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 20px;
+      margin-bottom: 30px;
+    }
+    a {
+      display: inline-block;
+      text-decoration: none;
+      background: #ff4b2b;
+      color: white;
+      padding: 12px 25px;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    a:hover {
+      background: #ff9068;
+    }
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>⚠️ গুরুত্বপূর্ণ নোটিশ ⚠️</h1>
+    <p>আপনারা যারা <strong>CC Generator</strong> এর জন্য এসেছেন,<br>
+    দয়া করে নিচের লিংকে যান এবং সেভ করে রাখুন:</p>
+    <a href="https://your-link.com" target="_blank">👉 এখানে ক্লিক করুন 👈</a>
+  </div>
+
+  <script>
+    // সামান্য ডাইনামিক ইফেক্ট: সময় দেখাবে
+    const container = document.querySelector(".container");
+    const timeEl = document.createElement("p");
+    setInterval(() => {
+      const now = new Date();
+      timeEl.innerText = "বর্তমান সময়: " + now.toLocaleTimeString("bn-BD");
+      container.appendChild(timeEl);
+    }, 1000);
+  </script>
+</body>
+</html>
