@@ -315,7 +315,10 @@ input[type=search] {
 .bin-section {
     padding: 5px 2px;
     background-color: var(--dark-blue);
-    border-bottom: 1px solid var(--light-blue);
+    /* Removed border-bottom as requested */
+    max-width: 520px; /* Changed to max-width for responsiveness */
+    width: 100%; /* Ensure it takes full width up to max-width */
+    margin: 0 auto; /* Center the section */
 }
 
 .bin-dropdown-container {
@@ -325,9 +328,40 @@ input[type=search] {
     margin-top: 3px;
 }
 
+.nested-dropdown-container {
+    flex-direction: column;
+    gap: 10px;
+    padding: 5px 0;
+}
+
+.nested-dropdown-container .bin-dropdown-card {
+    margin-bottom: 0;
+    box-shadow: none;
+    border: 1px solid var(--light-blue);
+}
+
+.nested-dropdown-container .bin-dropdown-header {
+    background-color: var(--medium-blue);
+    color: var(--text-color-light);
+    padding: 8px 10px;
+}
+
+.nested-dropdown-container .bin-dropdown-title {
+    font-size: 13px;
+}
+
+.nested-dropdown-container .bin-dropdown-details {
+    background-color: var(--dark-blue);
+    padding: 0;
+}
+
+.nested-dropdown-container .bin-dropdown-details.show {
+    padding: 10px 12px;
+}
+
 .bin-dropdown-card {
     flex: 1;
-    min-width: 250px;
+    min-width: 200px; /* Reduced width */
     font-family: Arial, sans-serif;
     border-radius: 8px;
     box-shadow: 0 2px 10px var(--shadow);
@@ -618,5 +652,10 @@ input[type=search] {
     .col-md-4 .form-group > input.form-control {
         width: 100%;
         box-sizing: border-box;
+    }
+
+    .bin-dropdown-card {
+        min-width: unset; /* Allow cards to shrink below 200px */
+        max-width: 100%; /* Ensure cards don't overflow on small screens */
     }
 }
